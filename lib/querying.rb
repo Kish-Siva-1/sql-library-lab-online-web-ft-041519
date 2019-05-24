@@ -36,13 +36,9 @@ def select_series_title_with_most_human_characters
     ON a.id = b.series_id
   WHERE b.species LIKE '%human%'
   GROUP BY a.title
-  ORDER BY COUNT(b.species LIKE '%human%') DESC"
+  ORDER BY COUNT(b.species LIKE '%human%') DESC
+  LIMIT 1"
 end
-
-#INSERT INTO series (id, title, author_id, subgenre_id) VALUES (1, "A Song of Ice and Fire", 1, 1), (2, "Second Series", 2, 2);
-
-#INSERT INTO characters (id, name, motto, species, author_id, series_id) VALUES (1, "Lady", "Woof Woof", "direwolf", 1, 1), (2, "Tyrion Lannister", "A Lannister always pays his debts", "human", 1, 1), (3, "Daenerys Targaryen", "If I look back I am lost", "human", 1, 1), (4, "Eddard Stark", "Winter is coming", "human", 1, 1);
-
 
 def select_character_names_and_number_of_books_they_are_in
   "Write your SQL query here"
