@@ -46,5 +46,6 @@ def select_character_names_and_number_of_books_they_are_in
     ON a.id = b.character_id
   LEFT JOIN books c
     ON b.book_id = c.id
-  GROUP BY a.name"
+  GROUP BY a.name
+  ORDER BY COUNT(c.id)"
 end
