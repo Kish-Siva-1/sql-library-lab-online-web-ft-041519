@@ -30,11 +30,13 @@ def select_name_and_series_subgenres_of_authors
 end
 
 def select_series_title_with_most_human_characters
-  "SELECT a.title
+  "SELECT a.title, COUNT(characters.species LIKE '%human%') 
   FROM series a
   LEFT JOIN characters b
     ON a.author_id = b.author_id
-    ON a.subgenre_id = b.subgenre_id"
+    AND a.subgenre_id = b.subgenre_id
+  WHERE characters.species LIKE '%human%'
+  GROUP BY a.title"
 end
 
 INSERT INTO series (id, title, author_id, subgenre_id) VALUES (1, "A Song of Ice and Fire", 1, 1), (2, "Second Series", 2, 2);
