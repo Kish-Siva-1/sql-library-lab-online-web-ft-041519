@@ -7,7 +7,7 @@ end
 
 def select_name_and_motto_of_char_with_longest_motto
   "SELECT name, motto 
-  FROM books
+  FROM characters
   WHERE series_id = 1
   ORDER BY year"
 end
