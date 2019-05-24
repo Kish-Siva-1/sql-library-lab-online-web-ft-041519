@@ -36,6 +36,7 @@ def select_series_title_with_most_human_characters
     ON a.id = b.series_id
   WHERE b.species LIKE '%human%'
   GROUP BY a.title
+  ORDER BY COUNT(b.species LIKE '%human%') DESC
   LIMIT 1"
 end
 
