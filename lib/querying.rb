@@ -30,13 +30,17 @@ def select_name_and_series_subgenres_of_authors
 end
 
 def select_series_title_with_most_human_characters
-  "ELECT a.name, c.name
-  FROM authors a
-  LEFT JOIN series b
-    ON a.id = b.author_id 
-  LEFT JOIN subgenres c
-    ON b.subgenre_id = c.id"
+  "SELECT a.title
+  FROM series a
+  LEFT JOIN characters b
+    ON a.author_id = b.author_id
+    ON a.subgenre_id = b.subgenre_id"
 end
+
+INSERT INTO series (id, title, author_id, subgenre_id) VALUES (1, "A Song of Ice and Fire", 1, 1), (2, "Second Series", 2, 2);
+
+INSERT INTO characters (id, name, motto, species, author_id, series_id) VALUES (1, "Lady", "Woof Woof", "direwolf", 1, 1), (2, "Tyrion Lannister", "A Lannister always pays his debts", "human", 1, 1), (3, "Daenerys Targaryen", "If I look back I am lost", "human", 1, 1), (4, "Eddard Stark", "Winter is coming", "human", 1, 1);
+
 
 def select_character_names_and_number_of_books_they_are_in
   "Write your SQL query here"
