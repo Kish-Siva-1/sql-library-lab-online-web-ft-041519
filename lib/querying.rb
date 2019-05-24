@@ -13,8 +13,10 @@ end
 
 
 def select_value_and_count_of_most_prolific_species
-  "SELECT 
-  FROM characters"
+  "SELECT name, COUNT(*)
+  FROM characters
+  HAVING MAX(COUNT(*))
+  GROUP BY name"
 end
 
 def select_name_and_series_subgenres_of_authors
