@@ -21,12 +21,20 @@ def select_value_and_count_of_most_prolific_species
 end
 
 def select_name_and_series_subgenres_of_authors
-  "SELECT name, COUNT(*)
-  FROM authors
-  GROUP BY species
-  ORDER BY COUNT(*) DESC
-  LIMIT 1"
+  "SELECT a.name, c.name
+  FROM authors a
+  LEFT JOIN series b
+    ON a.id = b.author_id 
+  LEFT JOIN subgenres c
+    ON c.id = b.subgenre_id"
 end
+
+INSERT INTO series (id, title, author_id, subgenre_id) VALUES (1, "A Song of Ice and Fire", 1, 1), (2, "Second Series", 2, 2);
+
+INSERT INTO subgenres (id, name) VALUES (1, "medieval"), (2, "space opera");
+
+INSERT INTO authors (id, name) VALUES (1, "George R. R. Martin"), (2, "Second Author");
+
 
 def select_series_title_with_most_human_characters
   "Write your SQL query here"
