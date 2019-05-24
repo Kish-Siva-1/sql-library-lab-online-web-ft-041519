@@ -30,7 +30,7 @@ def select_name_and_series_subgenres_of_authors
 end
 
 def select_series_title_with_most_human_characters
-  "SELECT a.title, COUNT(characters.species LIKE '%human%') 
+  "SELECT a.title 
   FROM series a
   LEFT JOIN characters b
     ON a.author_id = b.author_id
