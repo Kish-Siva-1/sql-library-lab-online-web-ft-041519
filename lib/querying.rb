@@ -21,7 +21,11 @@ def select_value_and_count_of_most_prolific_species
 end
 
 def select_name_and_series_subgenres_of_authors
-  "Write your SQL query here"
+  "SELECT name, COUNT(*)
+  FROM characters
+  GROUP BY species
+  ORDER BY COUNT(*) DESC
+  LIMIT 1"
 end
 
 def select_series_title_with_most_human_characters
