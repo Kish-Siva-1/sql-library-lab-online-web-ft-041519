@@ -11,7 +11,6 @@ def select_name_and_motto_of_char_with_longest_motto
   WHERE length(motto) = (SELECT max(length(motto)) FROM characters)"
 end
 
-
 def select_value_and_count_of_most_prolific_species
   "SELECT species, COUNT(*)
   FROM characters
@@ -44,3 +43,8 @@ def select_character_names_and_number_of_books_they_are_in
   "SELECT 
   FROM "
 end
+
+INSERT INTO characters (id, name, motto, species, author_id, series_id) VALUES (5, "Character One", "motto one", "cylon", 2, 2), (6, "Character Two", "motto two", "human", 2, 2), (7, "Character Three", "motto three", "cylon", 2, 2), (8, "Character Four", "motto four", "cylon", 2, 2);
+
+INSERT INTO character_books (id, book_id, character_id) VALUES (1, 1, 1), (2, 1, 2), (3, 2, 2), (4, 3, 2), (5, 1, 3), (6, 2, 3), (7, 3, 3), (8, 1, 4);
+
