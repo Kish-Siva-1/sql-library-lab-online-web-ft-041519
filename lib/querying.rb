@@ -35,7 +35,8 @@ def select_series_title_with_most_human_characters
   LEFT JOIN characters b
     ON a.id = b.series_id
   WHERE b.species LIKE '%human%'
-  GROUP BY a.title"
+  GROUP BY a.title
+  LIMIT 1"
 end
 
 #INSERT INTO series (id, title, author_id, subgenre_id) VALUES (1, "A Song of Ice and Fire", 1, 1), (2, "Second Series", 2, 2);
