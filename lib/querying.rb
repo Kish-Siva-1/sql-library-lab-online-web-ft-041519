@@ -16,7 +16,7 @@ def select_value_and_count_of_most_prolific_species
   "SELECT name, COUNT(*)
   FROM characters
   GROUP BY name
-  ORDER BY COUNT(*)
+  ORDER BY COUNT(*) DESC
   LIMIT 1"
 end
 
