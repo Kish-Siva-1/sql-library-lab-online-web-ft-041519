@@ -26,14 +26,14 @@ def select_name_and_series_subgenres_of_authors
   LEFT JOIN series b
     ON a.id = b.author_id 
   LEFT JOIN subgenres c
-    ON c.id = b.subgenre_id"
+    ON b.subgenre_id = c.id"
 end
 
-INSERT INTO series (id, title, author_id, subgenre_id) VALUES (1, "A Song of Ice and Fire", 1, 1), (2, "Second Series", 2, 2);
+#INSERT INTO series (id, title, author_id, subgenre_id) VALUES (1, "A Song of Ice and Fire", 1, 1), (2, "Second Series", 2, 2);
 
-INSERT INTO subgenres (id, name) VALUES (1, "medieval"), (2, "space opera");
+#INSERT INTO subgenres (id, name) VALUES (1, "medieval"), (2, "space opera");
 
-INSERT INTO authors (id, name) VALUES (1, "George R. R. Martin"), (2, "Second Author");
+#INSERT INTO authors (id, name) VALUES (1, "George R. R. Martin"), (2, "Second Author");
 
 
 def select_series_title_with_most_human_characters
