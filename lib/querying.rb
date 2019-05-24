@@ -22,7 +22,7 @@ end
 
 def select_name_and_series_subgenres_of_authors
   "SELECT name, COUNT(*)
-  FROM characters
+  FROM authors
   GROUP BY species
   ORDER BY COUNT(*) DESC
   LIMIT 1"
